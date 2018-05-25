@@ -60,7 +60,7 @@ namespace FixMouse
             if (distance > _steadyDistancePixels)
             {
                 Console.WriteLine($"DISTANCE THRESHOLD");
-                WINAPI.mouse_event((int)WINAPI.MouseFlags.MOUSEEVENTF_LEFTUP, (uint) mouseStruct.pt.x, (uint) mouseStruct.pt.y, 0, 0);
+                WINAPI.mouse_event((int)WINAPI.MouseFlags.MOUSEEVENTF_LEFTUP, (uint) _downPosition.Value.x, (uint) _downPosition.Value.y, 0, 0);
 
                 Reset();
                 return;
